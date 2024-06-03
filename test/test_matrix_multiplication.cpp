@@ -187,6 +187,10 @@ TEST(Step1_SameNumber, TestSameNumberMatrixMultiplication)
     // Multiply the matrices
     multiplyMatrices(A, B, result, rows, cols, cols);
 
+    // Multiply the matrices without errors
+    multiplyMatricesWithoutErrors(A, B, expected, rows, cols, cols);
+
+
     // Check if the result matches the expected result
     ASSERT_EQ(result, expected) << "Matrix multiplication test failed with same number: " << sameNumber;
 }
@@ -218,6 +222,8 @@ TEST(Step1_SameNumber, TestSameNumberMatrixMultiplicationEight)
 
     // Multiply the matrices
     multiplyMatrices(A, B, result, rows, cols, cols);
+
+
 
     // Check if the result matches the expected result
     ASSERT_EQ(result, expected) << "Matrix multiplication test failed with same number: " << sameNumber;
@@ -599,14 +605,6 @@ TEST(Step3_Find17, FindError17)
     multiplyMatrices(A, B, C, rowA, colA, colB);
 
     multiplyMatricesWithoutErrors(A, B, expected, rowA, colA, colB);
-    //print C
-    for (int i = 0; i < rowA; ++i) {
-        for (int j = 0; j < colB; ++j) {
-            std::cout << C[i][j] << " ";
-        }
-        std::cout << std::endl;
-    }
-
     ASSERT_EQ(C, expected) << "Matrix multiplication test failed! :(((()";
 }
 
