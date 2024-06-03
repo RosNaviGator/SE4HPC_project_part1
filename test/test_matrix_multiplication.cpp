@@ -223,7 +223,8 @@ TEST(Step1_SameNumber, TestSameNumberMatrixMultiplicationEight)
     // Multiply the matrices
     multiplyMatrices(A, B, result, rows, cols, cols);
 
-
+    // Multiply the matrices without errors
+    multiplyMatricesWithoutErrors(A, B, expected, rows, cols, cols);
 
     // Check if the result matches the expected result
     ASSERT_EQ(result, expected) << "Matrix multiplication test failed with same number: " << sameNumber;
